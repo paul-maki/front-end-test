@@ -1,20 +1,22 @@
-.message {
-    position: absolute;
-    display: none;
-}
-
 .productListItem {
     cursor: pointer;
-    transition: ease-in-out .2s;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    border-radius: .25rem;
 
-    // :hover  [class*=title], :hover [class*=subtitle] {
-    //     display: none;
-    // }
+    img {
+        transition: ease-in-out .2s;
+    }
 
-    :hover [class*=message] {
-        display: flex;
-        transition: ease-in-out .5s;
-        flex-grow: 1;
+    :hover img {
+        transform: scale(1.05);
     }
     
+}
+
+.image-container {
+    display: flex;
+    padding: 1rem;
+    align-items: flex-end;
+    flex-grow: 1;
 }

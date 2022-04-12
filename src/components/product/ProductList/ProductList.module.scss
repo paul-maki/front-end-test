@@ -1,8 +1,14 @@
+.container {
+    padding-block: 1rem;
+    background-color: rgba(68, 166, 223, 0.671);
+}
+
 .productList {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 1rem;
     padding: 1rem;
+    background-color: rgba(0, 0, 0, 0);
 
     @media screen and (min-width: 480px) {
         grid-template-columns: repeat(2, 1fr);

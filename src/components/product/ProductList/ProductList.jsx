@@ -36,7 +36,7 @@ export const ProductList = () => {
     },[productList])
 
     return(
-        <Container fluid>
+        <Container className={styles.container} fluid>
             <div className="d-flex justify-content-end">
                 <Input className="w-25" placeholder="Search" onChange={handleOnChange}></Input>
             </div>

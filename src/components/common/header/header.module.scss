@@ -12,7 +12,17 @@
 }
 
 .breadcrumb {
+    display: flex;
+    align-items: center;
     padding: 1rem;
+    
+    ol {
+        margin: 0;
+    }
+
+    li {
+        font-size: 1.25rem;
+    }
 }
 
 .counter {
@@ -24,4 +34,23 @@
     position: absolute;
     font-size: 12px;
     transform: translateY(1rem) translateX(.5rem)
+}
+
+.dropdown {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    margin-right: .5rem;
+
+    button {
+        background-color: rgba(0, 0, 0, 0);
+        color: black;
+        border: none;
+    }
+}
+
+.product-resume {
+    font-size: 10px;
+    display: flex;
+    gap: .25rem;
 }

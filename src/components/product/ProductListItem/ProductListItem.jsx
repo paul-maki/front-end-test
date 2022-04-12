@@ -13,7 +13,9 @@ export const ProductListItem = ({id, brand, model, price, imgUrl}) => {
             <CardBody className="d-flex flex-column">
                 <span className="title h4">{brand} </span>
                 <span className="subtitle h3">{model}</span>
-                <CardImg src={imgUrl} ></CardImg>
+                <div className={styles['image-container']}>
+                    <CardImg  src={imgUrl} ></CardImg>
+                </div>
             </CardBody>
         </Card>
     )
