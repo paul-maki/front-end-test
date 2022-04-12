@@ -1,0 +1,19 @@
+.productDetailActions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.productDetailColors {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.productDetailsMemories {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

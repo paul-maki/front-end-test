@@ -1,4 +1,5 @@
 import styles from './ProductDetail.module.scss'
+import { ProductDetailActions } from './ProductDetailActions';
 import { ProductDetailDescription } from "./ProductDetailDescription";
 
 export const ProductDetail = (props) => {
@@ -12,7 +13,7 @@ export const ProductDetail = (props) => {
                 </div>
                 <div>
                     <ProductDetailDescription showDetails={showDetails} />
-                    <p>Actions</p>
+                    <ProductDetailActions colors={colors} internalMemory={internalMemory} />
                 </div>
             </div> 
         </div>

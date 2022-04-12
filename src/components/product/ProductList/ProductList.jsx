@@ -2,6 +2,8 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { Container, Input } from "reactstrap";
 import { API_PRODUCT_ENDPOINT } from "../../../api/endPoints/product/productEndpoints";
+import localGetItem from "../../../tools/localGetItem";
+import setItemExpiration from "../../../tools/setTimeExpiration";
 import { ProductListItem } from "../ProductListItem/ProductListItem";
 import styles from './ProductList.module.scss';
 
@@ -15,16 +17,17 @@ export const ProductList = () => {
     }
 
     useEffect(() => {
-        const storedProductList = localStorage.getItem('productList');
-        if(storedProductList) {
-            setProductList(JSON.parse(storedProductList));
-        } else {
+        const storedProductList = localGetItem('productList');
+        const now = new Date().getTime();
+        if(!storedProductList || (now > storedProductList.expiry)) {
             axios.get(API_PRODUCT_ENDPOINT)
             .then(response => {
                 setProductList(response.data);
-                console.log(response.data)
-                localStorage.setItem('productList', JSON.stringify(response.data));
+                setItemExpiration('productList',response.data, 60);
             });
+            
+        } else {
+            setProductList((storedProductList.data));
         }
     },[]);
 

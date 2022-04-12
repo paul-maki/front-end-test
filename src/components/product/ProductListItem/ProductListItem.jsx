@@ -10,9 +10,9 @@ export const ProductListItem = ({id, brand, model, price, imgUrl}) => {
     }
     return (
         <Card className={styles.productListItem} onClick={handleOnClickCard}>
-            <CardBody>
-                <span className="h4">{brand} </span>
-                <span className="h3">{model}</span>
+            <CardBody className="d-flex flex-column">
+                <span className="title h4">{brand} </span>
+                <span className="subtitle h3">{model}</span>
                 <CardImg src={imgUrl} ></CardImg>
             </CardBody>
         </Card>

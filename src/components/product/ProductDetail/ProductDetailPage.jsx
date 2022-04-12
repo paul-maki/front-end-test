@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom"
 import { BreadcrumbItem } from "reactstrap";
 import { API_PRODUCT_ENDPOINT } from "../../../api/endPoints/product/productEndpoints";
+import localGetItem from "../../../tools/localGetItem";
+import setItemExpiration from "../../../tools/setTimeExpiration";
 import { Breadcrumb } from "../../common/Breadcrumb";
 import { ProductDetail } from "./ProductDetail";
 import styles from './ProductDetail.module.scss';
@@ -12,8 +14,17 @@ export const ProductDetailPage = () => {
     const { id } = useParams();
 
     useEffect(() => {
-        axios.get(`${API_PRODUCT_ENDPOINT}/${id}`)
-        .then(response => setProductDetail(response.data));
+        const localProduct = localGetItem(id);
+        const now = new Date().getTime();
+        if (!localProduct || (now > localProduct.expiry)){
+            axios.get(`${API_PRODUCT_ENDPOINT}/${id}`)
+            .then(response => {
+                setProductDetail(response.data);
+                setItemExpiration(response.data.id, response.data, 60);
+            });
+        } else {
+            setProductDetail(localProduct.data);
+        }        
     }, [id])
 
     if (!productDetail) {

@@ -1,3 +1,20 @@
+.message {
+    position: absolute;
+    display: none;
+}
+
 .productListItem {
     cursor: pointer;
+    transition: ease-in-out .2s;
+
+    // :hover  [class*=title], :hover [class*=subtitle] {
+    //     display: none;
+    // }
+
+    :hover [class*=message] {
+        display: flex;
+        transition: ease-in-out .5s;
+        flex-grow: 1;
+    }
+    
 }
