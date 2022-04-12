@@ -1,14 +1,13 @@
 import { BreadcrumbItem } from "reactstrap"
-import { Breadcrumb } from "../../common/Breadcrumb";
-import { ProductList } from "./ProductList"
-import styles from './ProductListPage.module.scss';
+import { Header } from "../../common/header/Header";
+import { ProductList } from "./ProductList";
 
 export const ProductListPage = () => {
     return (
         <div>
-            <Breadcrumb>
+            <Header>
                 <BreadcrumbItem active>Products list</BreadcrumbItem>
-            </Breadcrumb>
+            </Header>
             <ProductList />
         </div>
     )

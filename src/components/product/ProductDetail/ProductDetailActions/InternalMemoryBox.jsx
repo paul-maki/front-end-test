@@ -30,9 +30,9 @@ const StyledInternalMemoryBox = styled.div`
     border-radius: 0.25rem;
 `
 
-export const InternalMemoryBox = ({active, internalMemory}) => {
+export const InternalMemoryBox = ({active, internalMemory, handleSelectedMemory}) => {
     return(
-        <StyledOutsideInternalMemoryBox active={active}>
+        <StyledOutsideInternalMemoryBox active={active} onClick={() => handleSelectedMemory(internalMemory)}>
             <StyledInternalMemoryBox>
                 {internalMemory}
             </StyledInternalMemoryBox>

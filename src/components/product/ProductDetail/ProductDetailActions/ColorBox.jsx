@@ -27,9 +27,9 @@ const StyledColorBox = styled.div`
     background-color: ${props => props.bg};
 `
 
-export const ColorBox = ({active, color}) => {
+export const ColorBox = ({active, color, handleSelectedColor}) => {
     return(
-        <StyledOutsideBox active={active}>
+        <StyledOutsideBox active={active} onClick={() => handleSelectedColor(color)}>
             <StyledColorBox bg={color} />
         </StyledOutsideBox>
     )

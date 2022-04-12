@@ -5,7 +5,7 @@ import { BreadcrumbItem } from "reactstrap";
 import { API_PRODUCT_ENDPOINT } from "../../../api/endPoints/product/productEndpoints";
 import localGetItem from "../../../tools/localGetItem";
 import setItemExpiration from "../../../tools/setTimeExpiration";
-import { Breadcrumb } from "../../common/Breadcrumb";
+import { Header } from "../../common/header/Header";
 import { ProductDetail } from "./ProductDetail";
 import styles from './ProductDetail.module.scss';
 
@@ -33,14 +33,14 @@ export const ProductDetailPage = () => {
 
     return(
         <div className="d-flex flex-column min-vh-100">
-            <Breadcrumb>
+            <Header>
                 <BreadcrumbItem>
                     <Link to='/'>Home</Link>
                 </BreadcrumbItem>
                 <BreadcrumbItem>
                     {productDetail.model}
                 </BreadcrumbItem>
-            </Breadcrumb>
+            </Header>
             <div className={styles.productDetailWrapper}>
                 <ProductDetail {...productDetail} />
             </div>
