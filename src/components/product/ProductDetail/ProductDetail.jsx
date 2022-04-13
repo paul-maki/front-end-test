@@ -21,7 +21,7 @@ export const ProductDetail = (props) => {
                             { property: 'Weight', info: weight },
                         ];
     return(
-        <div className="d-flex flex-column">
+        <div className={styles.productDetail}>
             <div className={styles.productDetailContainer}>      
                 <div className="d-flex justify-content-end">
                     <img alt={model} src={imgUrl}></img>
