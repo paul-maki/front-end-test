@@ -5,6 +5,7 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { useSelector } from "react-redux";
 import classNames from "classnames";
 import { useState } from "react";
+import { v4 } from 'uuid';
 
 
 export const Header = ({children}) => {
@@ -31,12 +32,12 @@ export const Header = ({children}) => {
                 <DropdownMenu end>
                     {productList.map((product, index) => {
                         return(
-                            <>
+                            <div key={v4()}>
                                 <DropdownItem>
                                     <ProductResume product={product.product} quantity={product.quantity} />
-                                </DropdownItem>
+                                </DropdownItem> 
                                 {productList.length - 1 === index ? null : <DropdownItem divider/>}
-                            </>
+                            </div>
                         )
                     })}
                 </DropdownMenu>
