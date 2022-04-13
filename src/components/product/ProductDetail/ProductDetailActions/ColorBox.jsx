@@ -4,8 +4,8 @@ const StyledOutsideBox = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 6rem;
-    width: 6rem;
+    height: 5rem;
+    width: 5rem;
     padding: .25rem;
     transition: ease-in .05s;
     border-radius: 0.25rem;
@@ -20,8 +20,8 @@ const StyledOutsideBox = styled.div`
 
 
 const StyledColorBox = styled.div`
-    height: 5rem;
-    width: 5rem;
+    height: 4rem;
+    width: 4rem;
     border: 2px solid gray;
     border-radius: 0.25rem;
     background-color: ${props => props.bg};

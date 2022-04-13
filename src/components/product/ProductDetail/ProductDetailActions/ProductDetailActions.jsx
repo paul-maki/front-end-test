@@ -41,20 +41,26 @@ export const ProductDetailActions = ({colors, internalMemory, resumeData}) => {
 
     return(
         <div className={styles.productDetailActions}>
-            <div className={styles.productDetailsMemories}>
-                {internalMemory.map(memory => {
-                    return(
-                        <InternalMemoryBox active={infoSelected?.memory === memory} key={memory} internalMemory={memory} handleSelectedMemory={handleSelectedMemory} />
-                    )
-                })}
+            <div>
+                <p className='text-center'>Internal memory:</p>
+                <div className={styles.productDetailsMemories}>
+                    {internalMemory.map(memory => {
+                        return(
+                            <InternalMemoryBox active={infoSelected?.memory === memory} key={memory} internalMemory={memory} handleSelectedMemory={handleSelectedMemory} />
+                        )
+                    })}
+                </div>
             </div>
-            <div className={styles.productDetailColors}>
-                {colors.map(color => {
-                    return(
-                        <ColorBox active={infoSelected?.color === color} key={color} className="text-center" color={color} handleSelectedColor={handleSelectedColor}></ColorBox>
-                    )
-                })}
-                
+            <div>
+                <p className='text-center'>Color:</p>
+                <div className={styles.productDetailColors}>
+                    {colors.map(color => {
+                        return(
+                            <ColorBox active={infoSelected?.color === color} key={color} className="text-center" color={color} handleSelectedColor={handleSelectedColor}></ColorBox>
+                        )
+                    })}
+                    
+                </div>
             </div>
             <Button onClick={handleAddProduct} disabled={!infoSelected?.color || !infoSelected?.memory} color='primary' className='text-center'>Add product</Button>
         </div>
