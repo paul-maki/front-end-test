@@ -1,5 +1,5 @@
 import { ListGroup, ListGroupItem } from "reactstrap";
-import styles from './ProductDetailDescription.module.scss';
+import styles from './product-detail-description.module.scss';
 
 export const ProductDetailDescription = ({showDetails}) => {
     return(

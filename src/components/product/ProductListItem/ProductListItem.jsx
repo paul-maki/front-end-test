@@ -1,22 +1,19 @@
+import { Link } from "react-router-dom";
 import { Card, CardBody, CardImg } from "reactstrap"
-import styles from './ProductListItem.module.scss';
-import { useNavigate } from 'react-router-dom';
-
+import styles from './product-list-item.module.scss';
 
 export const ProductListItem = ({id, brand, model, price, imgUrl}) => {
-    const navigate = useNavigate()
-    const handleOnClickCard = () => {
-        navigate(`/${id}`)
-    }
-    return (
-        <Card className={styles.productListItem} onClick={handleOnClickCard}>
-            <CardBody className="d-flex flex-column">
-                <span className="title h4">{brand} </span>
-                <span className="subtitle h3">{model}</span>
-                <div className={styles['image-container']}>
-                    <CardImg  src={imgUrl} ></CardImg>
-                </div>
-            </CardBody>
+    return (       
+        <Card className={styles.productListItem}>
+            <Link className="text-decoration-none text-black" to={`/${id}`}>
+                <CardBody className="d-flex flex-column">                
+                    <div className={styles['image-container']}>
+                        <CardImg  src={imgUrl} ></CardImg>
+                    </div>
+                    <span className="title h5">{brand} {model}</span>
+                    <p className="h4">{price} €</p>
+                </CardBody>
+            </Link>
         </Card>
     )
 }

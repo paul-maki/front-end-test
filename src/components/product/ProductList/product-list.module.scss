@@ -1,18 +1,6 @@
 .container {
     padding-block: 1rem;
     background: rgb(68, 179, 177);
-
-    @media screen and (min-width: 480px) {
-        padding: 2rem;
-    }
-
-    @media screen and (min-width: 768px) {
-        padding: 3rem;
-    }
-
-    @media screen and (min-width: 1024px){
-        padding: 4rem;
-    }
 }
 
 .productList {

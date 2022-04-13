@@ -7,7 +7,7 @@ import localGetItem from "../../../tools/localGetItem";
 import setItemExpiration from "../../../tools/setTimeExpiration";
 import { Header } from "../../common/header/Header";
 import { ProductDetail } from "./ProductDetail";
-import styles from './ProductDetail.module.scss';
+import styles from './product-detail.module.scss';
 
 export const ProductDetailPage = () => {
     const [productDetail, setProductDetail] = useState()

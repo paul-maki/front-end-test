@@ -1,11 +1,11 @@
-import styles from './ProductDetail.module.scss'
+import styles from './product-detail.module.scss'
 import { ProductDetailActions } from './ProductDetailActions/ProductDetailActions';
 import { ProductDetailDescription } from "./ProductDetailDescription/ProductDetailDescription";
 
 export const ProductDetail = (props) => {
 
-    const {brand, model, price, cpu, ram, os, displayResolution, battery, primaryCamera, secondaryCmera, dimentions, weight, imgUrl, colors, internalMemory} = props;
-    const resumeData = {brand, model, price, imgUrl}
+    const {id, brand, model, price, cpu, ram, os, displayResolution, battery, primaryCamera, secondaryCmera, dimentions, weight, imgUrl, colors, internalMemory} = props;
+    const resumeData = {id, brand, model, price, imgUrl}
     const showDetails = [
                             { property: 'Brand', info: brand },
                             { property: 'Model', info: model },

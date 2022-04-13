@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Button } from 'reactstrap';
-import actionProductListType from '../../../../state/actions/actionProductListType';
+import { addProduct } from '../../../../state/actions/actionProductList';
 import { ColorBox } from './ColorBox';
 import { InternalMemoryBox } from './InternalMemoryBox';
-import styles from './ProductDetailActions.module.scss';
+import styles from './product-detail-actions.module.scss';
 
 export const ProductDetailActions = ({colors, internalMemory, resumeData}) => {
     const dispatch = useDispatch();
@@ -28,8 +28,17 @@ export const ProductDetailActions = ({colors, internalMemory, resumeData}) => {
     }
 
     const handleAddProduct = () => {
-        dispatch({type: actionProductListType.ADD_PRODUCT, payload: {...resumeData, ...infoSelected}})
-
+        //Axios post is always returning 1, we will use redux instead to exemplify
+        dispatch(addProduct({...resumeData, ...infoSelected}))        
+        // axios.post(
+        //     API_ADD_PRODUCT_ENDPOINT, {
+        //         id: resumeData.id,
+        //         colorCode: infoSelected.color,
+        //         storageCode: infoSelected.memory
+        //    })
+        //     .then(response => {
+        //         console.log(response)
+        //     })
     }
 
     useEffect(() => {

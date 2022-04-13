@@ -1,6 +1,6 @@
 import { Container, Input } from "reactstrap";
 import { ProductListItem } from "../ProductListItem/ProductListItem";
-import styles from './ProductList.module.scss';
+import styles from './product-list.module.scss';
 
 export const ProductList = ({handleOnChange, productList}) => {
     return(
