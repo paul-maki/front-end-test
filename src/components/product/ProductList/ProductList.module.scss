@@ -1,6 +1,18 @@
 .container {
     padding-block: 1rem;
-    background-color: rgba(68, 166, 223, 0.671);
+    background: rgb(68, 179, 177);
+
+    @media screen and (min-width: 480px) {
+        padding: 2rem;
+    }
+
+    @media screen and (min-width: 768px) {
+        padding: 3rem;
+    }
+
+    @media screen and (min-width: 1024px){
+        padding: 4rem;
+    }
 }
 
 .productList {
@@ -20,5 +32,22 @@
 
     @media screen and (min-width: 900px) {
         grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.search {
+    display: flex;
+    justify-content: end;
+    padding-inline: 1rem;
+    flex-grow: 1;
+
+    input {
+        @media screen and (min-width: 480px) {
+            width: 50%;        
+        }   
+
+        @media screen and (min-width: 768px) {
+            width: 25%;        
+        }      
     }
 }

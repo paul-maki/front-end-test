@@ -21,7 +21,7 @@ export const Header = ({children}) => {
             <Breadcrumb className={styles.breadcrumb}>
                 {children}
             </Breadcrumb>
-            <Dropdown className={styles.dropdown} isOpen={isOpen} toggle={() => setIsOpen(!isOpen)}>
+            <Dropdown className={styles.dropdown} isOpen={isOpen && productList.length > 0} toggle={() => setIsOpen(!isOpen)}>
                 <DropdownToggle>
                 <div className={styles.cart}>
                     <FontAwesomeIcon  icon={faShoppingCart} size="xl"/>

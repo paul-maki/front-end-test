@@ -12,10 +12,12 @@
 }
 
 .productDetailWrapper {
-    background-color: rgba(212, 186, 154, 0.76);
+    background: rgb(60,120,119);
+    background: linear-gradient(41deg, rgba(60,120,119,1) 0%, rgba(40,199,231,1) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5rem;
     flex-grow: 1;
+    padding: 1rem;
 }
